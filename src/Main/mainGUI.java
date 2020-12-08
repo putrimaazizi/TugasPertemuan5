@@ -9,7 +9,6 @@ import Ruang.balok;
 
 import javax.swing.JOptionPane;
 
-
 public class mainGUI extends javax.swing.JFrame {
 
     /**
@@ -19,7 +18,6 @@ public class mainGUI extends javax.swing.JFrame {
         initComponents();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -67,7 +65,7 @@ public class mainGUI extends javax.swing.JFrame {
         Reset.setFont(new java.awt.Font("Geometr415 Blk BT", 0, 11)); // NOI18N
         Reset.setText("Reset");
         Reset.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Reset.addActionListener(this::ResetActionPerformed);
+        Reset.addActionListener(evt -> this.ResetActionPerformed(evt));
 
         InputPanjang.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         InputPanjang.addActionListener(this::InputPanjangActionPerformed);
@@ -216,7 +214,7 @@ public class mainGUI extends javax.swing.JFrame {
     private void HitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitungActionPerformed
         
           if ("".equals(InputPanjang.getText()) || "".equals(InputLebar.getText()) || "".equals(InputTinggi.getText())){
-           JOptionPane.showMessageDialog(PopUp,"empty data!");
+           JOptionPane.showMessageDialog(PopUp,"data kosong!");
        
       }
               
@@ -232,7 +230,6 @@ public class mainGUI extends javax.swing.JFrame {
       persegi PersegiPanjang = new persegi(panjang,lebar);
       balok Balok = new balok(panjang, lebar, tinggi);
       
-      
       double Luas = PersegiPanjang.luas();
       double Keliling = PersegiPanjang.keliling();
       double Volume = Balok.volume();
@@ -245,14 +242,13 @@ public class mainGUI extends javax.swing.JFrame {
       
         }
        catch(NumberFormatException e){
-       JOptionPane.showMessageDialog(PopUp,"input data!");
+       JOptionPane.showMessageDialog(PopUp,"input data angka!");
        
        }
     }//GEN-LAST:event_HitungActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
-        
-        
+         
       InputLebar.setText("");
       InputPanjang.setText("");
       InputTinggi.setText("");
@@ -265,23 +261,15 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetActionPerformed
 
     private void InputPanjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputPanjangActionPerformed
-       
-        
+      
     }//GEN-LAST:event_InputPanjangActionPerformed
 
     private void InputTinggiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputTinggiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_InputTinggiActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -292,9 +280,6 @@ public class mainGUI extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(mainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

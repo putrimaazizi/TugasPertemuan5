@@ -27,12 +27,12 @@ public class balok extends persegi implements menghitungRuang{
 
     @Override
     public double volume() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return super.luas()*tinggi;
     }
 
     @Override
     public double luasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 2*super.luas() + 2*super.getLebar()*tinggi + 2*super.getPanjang()*tinggi;
     }
     
     
